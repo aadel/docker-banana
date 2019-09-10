@@ -26,7 +26,7 @@
 
 # Set environment variables.
 INSTALL_DIR=/opt
-BANANA_VERSION standalone
+BANANA_VERSION=standalone
 
 # Show environment variables.
 echo "INSTALL_DIR=${INSTALL_DIR}"
@@ -34,7 +34,7 @@ echo "INSTALL_DIR=${INSTALL_DIR}"
 # Stop function.
 function stop() {
   # Stop Banana.
-  ${INSTALL_DIR}/banana-${BANANA_VERSION}/bin/banana stop
+  ${INSTALL_DIR}/banana-standalone-${BANANA_VERSION}/bin/banana stop
 }
 
 # Stop

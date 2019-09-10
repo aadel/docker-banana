@@ -26,7 +26,7 @@
 
 # Set environment variables.
 INSTALL_DIR=/opt
-BANANA_VERSION standalone
+BANANA_VERSION=standalone
 
 # Show environment variables.
 echo "INSTALL_DIR=${INSTALL_DIR}"
@@ -35,7 +35,7 @@ echo "BANANA_VERSION=${BANANA_VERSION}"
 # Start function
 function start() {
   # Start Banana.
-  cd ${INSTALL_DIR}/banana-${BANANA_VERSION} && bin/banana
+  cd ${INSTALL_DIR}/banana-standalone-${BANANA_VERSION} && bin/banana
 }
 
 trap "docker-stop.sh; exit 1" TERM KILL INT QUIT
