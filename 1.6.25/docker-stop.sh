@@ -25,8 +25,8 @@
 #     or need to start multiple services in the one container
 
 # Set environment variables.
-ENV INSTALL_DIR=/opt
-ENV BANANA_VERSION standalone
+INSTALL_DIR=/opt
+BANANA_VERSION standalone
 
 # Show environment variables.
 echo "INSTALL_DIR=${INSTALL_DIR}"
