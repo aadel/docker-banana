@@ -26,7 +26,7 @@
 
 # Set environment variables.
 INSTALL_DIR=/opt
-BANANA_VERSION=standalone
+BANANA_VERSION=1.6.25
 
 # Show environment variables.
 echo "INSTALL_DIR=${INSTALL_DIR}"
