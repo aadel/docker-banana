@@ -53,7 +53,7 @@ RUN npm install
 ADD docker-run.sh /usr/local/bin/
 ADD docker-stop.sh /usr/local/bin/
 
-ENV BANANA_HTTP_PORT=5601
+ENV BANANA_HTTP_PORT=9901
 
 EXPOSE ${BANANA_HTTP_PORT}
 USER ${BANANA_USER}
