@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  solr:
+    image: solr
+    container_name: solr
+    command: ["solr", "-c"]
+
+  banana:
+    build: .
+    container_name: banana
+    ports:
+      - "9901:9901"
+    environment:
+      BANANA_SOLR_HOST: solr
+    links:
+      - solr
+    depends_on:
+      - solr
