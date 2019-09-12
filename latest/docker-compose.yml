@@ -4,7 +4,9 @@ services:
   solr:
     image: solr
     container_name: solr
-    command: ["solr", "-c"]
+    ports:
+      - "8983:8983"
+    command: ["solr", "-c", "-f"]
 
   banana:
     build: .
