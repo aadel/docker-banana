@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  solr:
+    image: solr
+    container_name: solr
+    command: ['solr', '-c']
+
+  app:
+    build: .
+    container_name: banana
+    links:
+     - solr
+    depends_on:
+      - solr
