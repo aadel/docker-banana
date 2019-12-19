@@ -23,16 +23,16 @@ Note: add `--network="host"` to the `run` command in order to get Solr and Banan
 #### 2. Start Banana
 
 ```sh
-$ docker run -d --name banana --network="host" aadel/docker-banana:release-1.7.0
+$ docker run -d --name banana -p 9901:9901 aaadel/banana
 ```
 
 #### 3. Check running containers ID
 
 ```sh
 $ docker ps
-CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                                         NAMES
-23c18d55c980        aadel/docker-banana:release-1.7        "docker-entrypoint.s…"   47 minutes ago      Up 47 minutes                                                    banana
-370e816403d3        solr                                   "docker-entrypoint.s…"   48 minutes ago      Up 48 minutes                                                    solr
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS               NAMES
+7c2542dc21b3        solr                "docker-entrypoint.s…"   4 seconds ago        Up 4 seconds                            solr
+d41a73f4325a        aaadel/banana       "docker-entrypoint.s…"   About a minute ago   Up About a minute                       banana
 
 ```
 
