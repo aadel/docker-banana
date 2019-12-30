@@ -29,7 +29,8 @@ Create config.json that contains Solr connection url and authentication settings
     "solrUrl": "http://solr:8983",
     "basicAuth": false,
     "username": "",
-    "password": ""
+    "password": "",
+    "couchbaseUrl": "http://couchbase:8092"
 }
 ```
 
