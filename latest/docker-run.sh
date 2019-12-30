@@ -35,7 +35,7 @@ echo "BANANA_VERSION=${BANANA_VERSION}"
 # Start function
 function start() {
   # Start Banana.
-  cd ${INSTALL_DIR}/banana-standalone-${BANANA_VERSION} && bin/banana
+  cd ${INSTALL_DIR}/banana && bin/banana
 }
 
 trap "docker-stop.sh; exit 1" TERM KILL INT QUIT
