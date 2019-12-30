@@ -18,12 +18,23 @@ Run Solr Container.
 
 See [https://hub.docker.com/_/solr](https://hub.docker.com/_/solr).
 
-Note: add `--network="host"` to the `run` command in order to get Solr and Banana containers communication to work if they run on the same Docker host.
 
 #### 2. Start Banana
 
+Create config.json that contains Solr connection url and authentication settings:
+
+```
+{
+    "serverPort": 9901,
+    "solrUrl": "http://solr:8983",
+    "basicAuth": false,
+    "username": "",
+    "password": ""
+}
+```
+
 ```sh
-$ docker run -d --name banana -p 9901:9901 aaadel/banana
+$ docker run -d --name banana -p 9901:9901 -v /path/to/config.json:/opt/banana/config.json aaadel/banana
 ```
 
 #### 3. Check running containers ID
