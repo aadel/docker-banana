@@ -24,7 +24,7 @@ LABEL maintainer="github@aadel.io"
 LABEL description="The Banana project is a visualization platform for timeseries and non-timeseries data stored in Apache Solr."
 
 RUN apt-get update \
-  && apt-get install -y unzip git-core \
+  && apt-get install -y unzip git-core curl \
   && apt-get clean
 
 # Add group
