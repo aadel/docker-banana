@@ -40,12 +40,12 @@ ENV INSTALL_DIR=/opt
 RUN mkdir -p ${INSTALL_DIR}
 
 # Install Banana
-ENV BANANA_VERSION latest
+ENV BANANA_VERSION `cat version`
 WORKDIR ${INSTALL_DIR}
-RUN curl -L -o ${INSTALL_DIR}/banana-${BANANA_VERSION}.zip https://github.com/aadel/banana-standalone/archive/${BANANA_VERSION}.zip
-RUN unzip banana-${BANANA_VERSION}.zip && rm ${INSTALL_DIR}/banana-${BANANA_VERSION}.zip
-ENV BANANA_PREFIX ${INSTALL_DIR}/banana
-RUN mv ${INSTALL_DIR}/banana-standalone-${BANANA_VERSION} banana
+RUN curl -L -o ${INSTALL_DIR}/banana-${BANANA_VERSION}.tar.gz http://d1gwqw8biulcc6.cloudfront.net/banana-${BANANA_VERSION}.tar.gz
+RUN tar -xvf banana-${BANANA_VERSION}.tar.gz && rm ${INSTALL_DIR}/banana-${BANANA_VERSION}.tar.gz
+ENV BANANA_PREFIX ${INSTALL_DIR}/banana-${BANANA_VERSION}
+RUN mv dist banana-${BANANA_VERSION}
 WORKDIR ${BANANA_PREFIX}
 RUN npm -d install
 RUN chown -R ${BANANA_USER}:${BANANA_GROUP} ${BANANA_PREFIX}
