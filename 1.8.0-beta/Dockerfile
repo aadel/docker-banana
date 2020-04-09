@@ -40,12 +40,12 @@ ENV INSTALL_DIR=/opt
 RUN mkdir -p ${INSTALL_DIR}
 
 # Install Banana
-ENV BANANA_VERSION `cat version`
+ENV BANANA_VERSION 1.8.0-beta
 WORKDIR ${INSTALL_DIR}
 RUN curl -L -o ${INSTALL_DIR}/banana-${BANANA_VERSION}.tar.gz http://d1gwqw8biulcc6.cloudfront.net/banana-${BANANA_VERSION}.tar.gz
 RUN tar -xvf banana-${BANANA_VERSION}.tar.gz && rm ${INSTALL_DIR}/banana-${BANANA_VERSION}.tar.gz
-ENV BANANA_PREFIX ${INSTALL_DIR}/banana-${BANANA_VERSION}
-RUN mv dist banana-${BANANA_VERSION}
+ENV BANANA_PREFIX ${INSTALL_DIR}/banana
+RUN mv dist banana
 WORKDIR ${BANANA_PREFIX}
 RUN npm -d install
 RUN chown -R ${BANANA_USER}:${BANANA_GROUP} ${BANANA_PREFIX}

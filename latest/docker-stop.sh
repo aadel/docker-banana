@@ -26,7 +26,6 @@
 
 # Set environment variables.
 INSTALL_DIR=/opt
-BANANA_VERSION=`cat version`
 
 # Show environment variables.
 echo "INSTALL_DIR=${INSTALL_DIR}"
@@ -34,7 +33,7 @@ echo "INSTALL_DIR=${INSTALL_DIR}"
 # Stop function.
 function stop() {
   # Stop Banana.
-  ${INSTALL_DIR}/banana-${BANANA_VERSION}/bin/banana stop
+  ${INSTALL_DIR}/banana/bin/banana stop
 }
 
 # Stop
