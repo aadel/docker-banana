@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  solr:
+    image: solr
+    ports:
+      - 8983:8983
+    command: ["solr", "-c", "-f"]
+
+  banana:
+    build: .
+    ports:
+      - 9901:9901
+    environment:
+      BANANA_SOLR_HOST: solr
+    links:
+      - solr
+    depends_on:
+      - solr
