@@ -19,7 +19,7 @@
 # relative to the canonical path of this script.
 #
 
-FROM node:slim
+FROM node:slim AS builder
 LABEL maintainer="github@aadel.io"
 LABEL description="The Banana project is a visualization platform for timeseries and non-timeseries data stored in Apache Solr."
 
@@ -49,6 +49,10 @@ RUN mv dist banana
 WORKDIR ${BANANA_PREFIX}
 RUN npm -d install
 RUN chown -R ${BANANA_USER}:${BANANA_GROUP} ${BANANA_PREFIX}
+
+FROM node:14.4.0-alpine3.12
+
+COPY --from=builder ${BANANA_PREFIX} ${BANANA_PREFIX}
 
 # Add start and stop script
 ADD docker-run.sh /usr/local/bin/
