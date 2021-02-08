@@ -12,6 +12,4 @@ Learn more about Banana on the [Banana project](https://github.com/lucidworks/ba
 
 ## How to use this Docker image
 
-See following URLs, 
-
-- [1.7.0](https://github.com/aadel/docker-banana/blob/master/1.7.0/README.md)
+Check the project repository [here](https://github.com/aadel/banana-standalone) for more information.
